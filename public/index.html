@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>University Course Planner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="index.css">
+
+    <!--    fonts   -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="logo_banner">
+        <h1>University Course Planner</h1>
+    </div>
+
+    <div class="columns_container">
+        <!--  student column  -->
+        <div class="column" onclick="redirectTo(`/students`)">
+            <div class="column_content">
+                <div class="column_title">Students</div>
+            </div>
+        </div>
+
+        <!--  professors column  -->
+        <div class="column" onclick="redirectTo(`/professors`)">
+            <div class="column_content">
+                <div class="column_title">Professors</div>
+            </div>
+        </div>
+
+        <!--  Classrooms column  -->
+        <div class="column" onclick="redirectTo(`/classrooms`)">
+            <div class="column_content">
+                <div class="column_title">Classrooms</div>
+            </div>
+        </div>
+
+        <!--  courses column  -->
+        <div class="column" onclick="redirectTo(`/courses`)">
+            <div class="column_content">
+                <div class="column_title">Courses</div>
+            </div>
+        </div>
+
+        <!--  Schedules column  -->
+        <div class="column" onclick="redirectTo(`/schedules`)">
+            <div class="column_content">
+                <div class="column_title">Schedules</div>
+            </div>
+        </div>
+
+        <!--  About column  -->
+        <div class="column" onclick="redirectTo(`/about`)">
+            <div class="column_content">
+                <div class="column_title">About</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function redirectTo(page){
+            window.location.href = page
+        }
+    </script>
+
+</body>
+</html>

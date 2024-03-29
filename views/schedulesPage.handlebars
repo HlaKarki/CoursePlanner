@@ -1,0 +1,51 @@
+<div id="page_mini_title">
+    <h2>Schedules Data</h2>
+</div>
+
+<div class="table_container">
+    <div id="explain_to_user">
+        <p>To check the schedule of a student, please click the values that are <label class="underline">italic and colored white</label> in the <label class="italic">idStudent</label> or <label class="italic">Username</label> columns</p>
+        <p>To check the courses a student is taking in a term, please click the values that are <label class="underline">underlined</label> in the <label class="italic">Term</label> column</p>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>idSchedule</th>
+            <th>idStudent</th>
+            <th>Username</th>
+            <th>Total Credit Hours</th>
+            <th>Term</th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+            {{#each schedules}}
+                <tr>
+                    <td>{{idSchedule}}</td>
+                    <td>{{idStudent}}</td>
+                    <td><a href="/studentSchedules/{{idStudent}}">{{username}}</a></td>
+                    <td>{{totalCredits}}</td>
+                    <td><a href="/studentCourses/{{idSchedule}}">{{term}}</a></td>
+                    <td><a href="#deleteScheduleButton" onclick="deleteScheduleUpdate({{idSchedule}})">Delete</a></td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<div class="user_direction">
+    <label>
+        *To create a new schedule, click the student's account you want to make one in
+    </label>
+</div>
+
+{{>schedulesPageCRUDForm}}
+
+<script>
+    function deleteScheduleUpdate(idSchedule){
+        toggleForm("deleteScheduleForm")
+        document.getElementById("scheduleDelete").value = idSchedule
+    }
+</script>

@@ -1,0 +1,54 @@
+<div id="page_mini_title">
+    <h2>Courses in {{studentName}}'s {{term}} term</h2>
+</div>
+
+<div class="table_container">
+    <div class="table_navbar">
+        <div id="explain_to_user">
+            To check a course's details, please click the <label class="aTagColor">colored</label> value
+        </div>
+        <div class="addButton" onclick="toggleForm(`addStudentCourseForm`)">
+            Add new course &nbsp; &nbsp; <img src="/addIcon" alt="add icon">
+        </div>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Course</th>
+            <th>Description</th>
+            <th>Credits</th>
+            <th>Prerequisites</th>
+            <th>Grade</th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+            {{#each studentCourses}}
+                <tr>
+                    <td><a href="/courseDetails/{{idCourse}}">{{course}}</a></td>
+                    <td>{{description}}</td>
+                    <td>{{credits}}</td>
+                    <td>{{prereq}}</td>
+                    {{#if grade}}
+                        <td>{{grade}}</td>
+                    {{else}}
+                        <td>N/A</td>
+                    {{/if}}
+
+                    <td><a href="#deleteCourseForm" onclick="deleteStudentCourse()">Delete</a></td>
+                </tr>
+            {{/each}}
+        </tbody>
+
+    </table>
+</div>
+
+{{>studentCoursesPageCRUDForm courseNames=courseNames idSchedule=idSchedule}}
+
+<script>
+    function deleteStudentCourse(){
+        toggleForm("deleteStudentCourseForm")
+    }
+</script>

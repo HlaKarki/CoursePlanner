@@ -1,0 +1,58 @@
+<div id="page_mini_title">
+    <h2>Classrooms Data</h2>
+</div>
+<div>
+
+</div>
+
+<div class="table_container">
+    <div class="table_navbar">
+        <div></div>
+        <div class="addButton" onclick="toggleForm(`addNewClassroom`)">
+            Add new classroom &nbsp; &nbsp; <img src="/addIcon" alt="add icon">
+        </div>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>idClassroom</th>
+            <th>Total Seats</th>
+            <th>Building</th>
+            <th>Room Number</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {{#each classrooms}}
+            <tr>
+                <td>{{idClassroom}}</td>
+                <td>{{totalSeats}}</td>
+                <td>{{building}}</td>
+                <td>{{roomNumber}}</td>
+                <td><a href="#updateClassroomForm" onclick="updateClassroom('{{idClassroom}}', '{{totalSeats}}', '{{building}}', '{{roomNumber}}')">Update</a></td>
+                <td><a href="#deleteClassroomForm" onclick="deleteClassroom({{idClassroom}})">Delete</a></td>
+            </tr>
+        {{/each}}
+
+        </tbody>
+    </table>
+</div>
+
+{{>classroomsPageCRUDForm}}
+
+<script>
+    function updateClassroom(idClassroom, updateTotalSeats, updateBuilding, updateRoomNumber){
+        toggleForm("updateClassroomForm")
+        document.getElementById("idClassroom").value = idClassroom
+        document.getElementById("updateTotalSeats").value = updateTotalSeats
+        document.getElementById("updateBuilding").value = updateBuilding
+        document.getElementById("updateRoomNumber").value = updateRoomNumber
+    }
+
+    function deleteClassroom(idClassroom){
+        toggleForm("deleteClassroomForm")
+        document.getElementById("idClassroomDelete").value = idClassroom
+    }
+</script>

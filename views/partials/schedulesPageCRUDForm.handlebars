@@ -1,0 +1,13 @@
+<div class="form_container">
+    <form class="form hide" id="deleteScheduleForm" method="POST" action="/deleteSchedule">
+        <img class="closeButton" onclick="toggleForm(`deleteScheduleForm`)" src="/addIcon" alt="close icon"/>
+        <label class="form_title bold">Delete</label>
+
+        <div class="form_div block">
+            <label for="scheduleDelete">idSchedule:</label>
+            <input type="text" id="scheduleDelete" name="scheduleDelete">
+        </div>
+
+        <button id="deleteScheduleButton" type="submit">Delete</button>
+    </form>
+</div>

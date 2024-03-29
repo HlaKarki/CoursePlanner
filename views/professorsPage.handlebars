@@ -1,0 +1,53 @@
+<div id="page_mini_title">
+    <h2>Professors Data</h2>
+</div>
+
+<div class="table_container">
+    <div class="table_navbar">
+        <div></div>
+        <div class="addButton" onclick="toggleForm(`addProfForm`)">
+            Add new professor &nbsp; &nbsp; <img src="/addIcon" alt="add icon">
+        </div>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>idProfessor</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            {{#each allProfessors}}
+                <tr>
+                    <td>{{professorId}}</td>
+                    <td>{{firstName}}</td>
+                    <td>{{lastName}}</td>
+                    <td>{{email}}</td>
+                    <td><a href="#updateProfForm" onclick="fillUpdateForm('{{professorId}}', '{{firstName}}', '{{lastName}}', '{{email}}')">Update</a></td>
+                    <td><a href="#deleteProfForm" onclick="fillDeleteForm('{{professorId}}')">Delete</a></td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+{{>professorsPageCRUDForm}}
+
+<script>
+    function fillDeleteForm(professorId) {
+        toggleForm("deleteProfForm")
+        document.getElementById('professorDelete').value = professorId;
+    }
+
+    function fillUpdateForm(studentId, firstname, lastname, email) {
+        toggleForm("updateProfForm")
+        document.getElementById('idProfessor').value = studentId;
+        document.getElementById('updateFirstname').value = firstname;
+        document.getElementById('updateLastname').value = lastname;
+        document.getElementById('emailUpdate').value = email;
+    }
+</script>
