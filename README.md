@@ -11,3 +11,8 @@ Professor information: The planner provides information about each professor, in
 Class location and time: The planner shows students where and when each class is offered.
 Schedule builder: Students can use the schedule builder to create a personalized schedule.
 Schedule preview: Students can preview their schedule to see how their weekdays will be like when the term starts
+
+
+[Video Demo](https://hlakarki.vercel.app/static/media/uniCourse.d2f06dba9de1d09c2e2c.gif)
+
+![](https://hlakarki.vercel.app/static/media/uniCourse.d2f06dba9de1d09c2e2c.gif)
